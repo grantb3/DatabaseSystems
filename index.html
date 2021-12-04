@@ -19,27 +19,28 @@ I just created a number between 1 and 100. Try to guess the number.
 
 <script>
 
-var randomNumber = Math.ceil(Math.random() * 100);
-console.log(randomNumber);
+var dice = {
+  sides: 6,
+  roll: function () {
+    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
+}
 
 
-var handleGuess = function(num) {
-    var stringGuess = document.getElementById('inputNumber').value;
-    
-    var guess = parseInt(stringGuess,10);
-    
-    if(guess == randomNumber)
-    {
-        alert("You guessed correctly!");
-    }
-    else if (guess < randomNumber)
-    {
-        alert("Your guess is too low.");
-    }
-    else
-    {
-        alert("Your guess is too high.");
-    }
+
+//Prints dice roll to the page
+
+function printNumber(number) {
+  var placeholder = document.getElementById('placeholder');
+  placeholder.innerHTML = number;
+}
+
+var button = document.getElementById('button');
+
+button.onclick = function() {
+  var result = dice.roll();
+  printNumber(result);
 };
 
 </script>
