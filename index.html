@@ -1,0 +1,49 @@
+<html>
+<!-- v.01 -->
+<head>
+	<title>Web App</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+</head>
+
+<body>
+
+<p>
+I just created a number between 1 and 100. Try to guess the number.
+</p>
+
+<input type="text" id="inputNumber" > <br />
+
+<button type="button" onclick="handleGuess();">Guess</button>
+
+
+
+<script>
+
+var randomNumber = Math.ceil(Math.random() * 100);
+console.log(randomNumber);
+
+
+var handleGuess = function(num) {
+    var stringGuess = document.getElementById('inputNumber').value;
+    
+    var guess = parseInt(stringGuess,10);
+    
+    if(guess == randomNumber)
+    {
+        alert("You guessed correctly!");
+    }
+    else if (guess < randomNumber)
+    {
+        alert("Your guess is too low.");
+    }
+    else
+    {
+        alert("Your guess is too high.");
+    }
+};
+
+</script>
+
+</body>
+
+</html>
