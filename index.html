@@ -86,23 +86,12 @@
             Roll the Dice
         </button>
     </div>
-    <div class="container bottom">
-        <button type="button" class="butn"
-            onClick="editNames()">
-            Edit Names
-        </button>
-    </div>
   
     <script>
   
         // Player name
         var player1 = "Player 1";
         var player2 = "Player 2";
-  
-        // Function to change the player name
-        function editNames() {
-            player1 = prompt("Change Player1 name");
-            player2 = prompt("Change player2 name");
   
             document.querySelector("p.Player1")
                             .innerHTML = player1;
@@ -118,10 +107,10 @@
                 var randomNumber2 = Math.floor(Math.random() * 6) + 1;
   
                 document.querySelector(".img1").setAttribute("src",
-                    "dice" + randomNumber1 + ".png");
+                    "dice" + randomNumber1 + "https://static.thenounproject.com/png/2502960-200.png");
   
                 document.querySelector(".img2").setAttribute("src",
-                    "dice" + randomNumber2 + ".png");
+                    "dice" + randomNumber2 + "https://static.thenounproject.com/png/2502960-200.png");
   
                 if (randomNumber1 === randomNumber2) {
                     document.querySelector("h1").innerHTML = "Draw!";
