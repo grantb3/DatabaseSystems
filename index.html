@@ -2,6 +2,12 @@
 <head>
   <title>Create Multiplication Table</title>
   <script type="text/javascript">
+  function changeBackground(color)
+  {
+   document.body.style.background = color;
+  }
+	window.addEventListener("load",function() { changeBackground('grey') });
+	
     var rows = prompt("Enter Amount of Rows");
     var cols = prompt("Enter Amount of Columns");
     if(rows == "" || rows == null)
